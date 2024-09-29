@@ -1,0 +1,142 @@
+:root{
+  --letterBlackBg : #fff;
+  --letterWhiteBg : #1E1B4B;
+  --BackGroundWhite: #E4E4E4;
+  --BackGroundBlack : #1E1B4B;
+  --PrincipalColor: rgb(236, 72, 153);
+}
+
+a{
+  text-decoration: none;
+}
+
+*{
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bg-principal{
+  background-color: rgba(236, 72, 153, 0.8) ;
+  
+}
+
+.title{
+  color: var(--letterBlackBg);
+  font-size: 32px;
+}
+.search-bar{
+  
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+.color-light{
+  color: var(--letterBlackBg);
+}
+
+.bar-container{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 100vw;
+  min-width: 40vw;
+  justify-content:flex-end;
+}
+
+section.principal-layer{
+  background-color: var(--BackGroundWhite);
+  min-height: calc(100vh - 74px) ;
+  
+}
+
+article.product-card{
+  height: 497px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  padding: 10px;
+  
+
+}
+
+.cards-container{
+  display: flex;
+  gap: 32px;
+  padding: 16px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.image-product{
+  height: 291px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.body-card-product{
+  
+ 
+  
+}
+.btn-card-product{
+  background-color: var(--letterWhiteBg);
+  color: var(--letterBlackBg);
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  border: none;
+  padding: 8px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+}
+.btn-card-product:hover{
+  background-color: var(--BackGroundWhite);
+  color: var(--letterWhiteBg);
+  
+}
+
+.color-principal{
+  color: var(--PrincipalColor);
+}
+
+.title-results{
+  color: var(--PrincipalColor);
+  font-size: 32px;
+}
+
+.product-section{
+  margin-left: 200px;
+  padding: 64px ;
+
+}
+.filter-section{
+
+  position: fixed;
+  width: 205px;
+  min-height: calc(100vh - 74px);
+
+  background-color: var(--letterBlackBg);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+}
+.nav-fixed{
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  
+}
+@media (max-width: 598px)  {
+  .filter-section{
+    display: none;
+  }
+  .product-section{
+    margin: 0;
+  }
+}
