@@ -79,11 +79,7 @@ article.product-card{
   object-fit: cover;
 }
 
-.body-card-product{
-  
- 
-  
-}
+
 .btn-card-product{
   background-color: var(--letterWhiteBg);
   color: var(--letterBlackBg);
