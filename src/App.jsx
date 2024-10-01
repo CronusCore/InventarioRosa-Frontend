@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <HomePage/>
-      <input type="text" placeholder="RAMA LOGIIN MOVIENDO"/>
+      <input type="text" placeholder='Ingresa tu nombre'></input>
     </>
   )
 }
