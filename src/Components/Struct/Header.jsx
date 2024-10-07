@@ -6,12 +6,29 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import AdministratorLogo from '../../assets/category-minus.svg';
 import SearchBar from './SearchBar';
+import { useState, useEffect } from 'react';
 
 
  const Header = () =>{
+    const [isScrolling , setIsScrolling] = useState(false);
+
+    const handleScroll = (e) =>{
+      if(window.scrollY > 1){
+        setIsScrolling(true);
+      }else{
+        setIsScrolling(false);
+      }
+
+    }
+    useEffect(() =>{
+        window.addEventListener('scroll', handleScroll);
+        return ()=>{
+          window.removeEventListener('scroll', handleScroll);
+        }
+    },[]);
 
     return (
-        <Navbar expand="lg" className="bg-principal p-2 nav-fixed">
+        <Navbar expand="lg" className={`${isScrolling ? "bg-scrolling" : "bg-principal" } p-2 nav-fixed`}>
           <Container fluid>
             <Navbar.Brand href="#" className='title'>Inventario Rosa</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />

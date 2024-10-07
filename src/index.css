@@ -21,7 +21,7 @@ p{
 }
 
 .bg-principal{
-  background-color: rgba(236, 72, 153, 0.8) ;
+  background-color: rgb(236, 72, 153) ;
   
 }
 
@@ -134,6 +134,11 @@ article.product-card{
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
+  transition: all 1s;
+}
+
+.bg-scrolling{
+  background-color: rgba(236, 72, 153, 0.5) ;
   
 }
 @media (max-width: 598px)  {

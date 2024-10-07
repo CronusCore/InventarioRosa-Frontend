@@ -12,7 +12,7 @@ const HomePage = () => {
 
                 <FilterSection />
                 <ProductSection>
-                        <Card Name="Eco Twist" Price="200" Stock="32" Image="https://m.media-amazon.com/images/I/51LcexcMjTL.jpg" />
+                        <Card Name="Eco Twist" Price="200" Stock="32" Image="https://m.media-amazon.com/images/I/51LcexcMjTL.jpg" Id={1} />
                         <Card Name="Eco Twist" Price="200" Stock="32" Image="url" />
                         <Card Name="Eco Twist" Price="200" Stock="32" Image="url" />
                         <Card Name="Eco Twist" Price="200" Stock="32" Image="url" />

@@ -1,5 +1,5 @@
 
-const Card = ({Name, Price, Stock, Image})=>{
+const Card = ({Name, Price, Stock, Image, Id})=>{
     return(
         <article className="product-card">
             <img src={Image} alt={`Image of ${Name}`} className="image-product"/>
