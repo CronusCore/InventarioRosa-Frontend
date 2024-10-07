@@ -1,5 +1,5 @@
 
-const FilterSection = ()=>{
+const CategoryFilter = ()=>{
     return(
         <section className= "filter-section">
             <img src=""/>
@@ -8,4 +8,4 @@ const FilterSection = ()=>{
     );
 }
 
-export default FilterSection;
+export default CategoryFilter;
