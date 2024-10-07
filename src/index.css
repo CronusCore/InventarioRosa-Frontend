@@ -3,7 +3,9 @@
   --letterWhiteBg : #1E1B4B;
   --BackGroundWhite: #E4E4E4;
   --BackGroundBlack : #1E1B4B;
-  --PrincipalColor: rgb(236, 72, 153);
+  --PrincipalColor: #EC4899;
+  --TitleColor: #FF3366;
+  --color-gray: #928787;
 }
 
 a{
@@ -101,7 +103,9 @@ article.product-card{
 .color-principal{
   color: var(--PrincipalColor);
 }
-
+.color-titulos{
+  color: var(--TitleColor);
+}
 .title-results{
   color: var(--PrincipalColor);
   font-size: 32px;
@@ -113,11 +117,13 @@ article.product-card{
 
 }
 .filter-section{
-
+  display: flex;
+  flex-direction: column;
+  gap: 8px ;
   position: fixed;
   width: 205px;
   min-height: calc(100vh - 74px);
-
+  padding: 24px;
   background-color: var(--letterBlackBg);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 
@@ -136,3 +142,27 @@ article.product-card{
     margin: 0;
   }
 }
+
+.color-white{
+  color: var(--letterBlackBg);
+}
+
+.bg-darkblue{
+  background-color: var(--letterWhiteBg);
+}
+.btn-category{
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s;
+  color: var(--color-gray);
+
+}
+.btn-category:hover{
+  background-color: var(--letterWhiteBg);
+  color: var(--letterBlackBg);
+}
+
+

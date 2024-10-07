@@ -1,6 +1,6 @@
 import Header from '../Struct/Header'
 import Card from './Card';
-import FilterSection from '../Category/FilterSection';
+import FilterSection from '../Category/CategoryFilter';
 import ProductSection from './ProductSection';
 
 const HomePage = () => {
