@@ -1,21 +1,16 @@
 import CategoryFilterlogo from '../../assets/CategorySVG.svg'
 import { useEffect, useState } from 'react';
 import { setFirstScreenSize } from '../../Functions';
-import { showCategoryFilter } from '../../Functions';
 
 const CategoryFilter = () => {
-    const [isMobileScreen, setIsMobileScreen] = useState(false);
-    const [isShowCategory, setIsShowCategory] = useState(true);
+    const [isMobileScreen, setIsMobileScreen] = useState(setFirstScreenSize(598));
+    const [isShowCategory, setIsShowCategory] = useState(!setFirstScreenSize(598));
 
     const handleShowCategory = (e) => {
         setIsShowCategory(!isShowCategory);
     }
 
     useEffect(() => {
-
-        const isScreenMob = setFirstScreenSize(598);//true?
-        setIsMobileScreen(isScreenMob);
-        setIsShowCategory(!isScreenMob);
 
 
         const handleResize = () => {

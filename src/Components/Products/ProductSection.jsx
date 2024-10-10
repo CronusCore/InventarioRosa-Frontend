@@ -6,7 +6,7 @@ const ProductSection = ({children})=>{
                     <div className='cards-container'>
                         {children}
                     </div>
-                </section>
+       </section>
     );
 }
 

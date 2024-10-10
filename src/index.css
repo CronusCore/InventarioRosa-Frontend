@@ -7,12 +7,22 @@
   --TitleColor: #FF3366;
   --color-gray: #928787;
 }
-
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 a{
   text-decoration: none;
 }
 p{
   margin: 0px;
+  text-wrap: wrap;
+  
+}
+figure{
+  margin:0;
+  padding: 0;
 }
 *{
   font-family: "Itim", cursive;
@@ -27,6 +37,10 @@ p{
 
 .title{
   color: var(--letterBlackBg);
+  font-size: 32px;
+}
+.title-pink{
+  color: var(--TitleColor);
   font-size: 32px;
 }
 .search-bar{
@@ -115,7 +129,7 @@ article.product-card{
 
 .product-section{
   margin-left: 200px;
-  padding: 64px ;
+  padding: 64px;
 
 }
 .filter-section{
@@ -151,8 +165,17 @@ article.product-card{
 
   .product-section{
     margin: 0;
+    
   }
 
+  .detail-section{
+    padding: 0px;
+  }
+  .image-section{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+ 
 }
 
 .color-white{
@@ -223,3 +246,86 @@ article.product-card{
   transition: all 1s;
   
 }
+
+
+/**Componentes de detalles del producto*/
+.detail-section{
+  min-height: calc(100vh - 74px);
+}
+.card-details-product{
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  background-color: var(--letterBlackBg);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  min-width: 450px;
+  max-width: 1250px;
+  
+}
+
+.image-preview{
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--TitleColor);
+  border-radius: 5px;
+  object-fit: cover;
+  
+}
+.image-preview:hover{
+  border: 1px solid var(--letterWhiteBg);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  
+}
+.image-collection{
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  scrollbar-width: none;
+
+}
+.image-view{
+  max-width: 550px;
+  max-height: 550px;
+  object-fit: cover;
+}
+.image-principal{
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-collection{
+  padding: 16px;
+  gap: 16px;
+}
+.product-details{
+  flex-basis: 450px;
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid var(--TitleColor);
+  border-radius: 5px;
+}
+@media (max-width: 598px)  {
+  .image-principal{
+    order: -1;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .image-collection{
+    flex-direction: row;
+  }
+  .image-view{
+    width: 400px;
+    height: 400px;
+   
+  }
+}
+
+
+
+

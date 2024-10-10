@@ -1,6 +1,6 @@
 import Header from '../Struct/Header'
 import Card from './Card';
-import FilterSection from '../Category/CategoryFilter';
+import CategoryFilter from '../Category/CategoryFilter';
 import ProductSection from './ProductSection';
 
 const HomePage = () => {
@@ -8,9 +8,9 @@ const HomePage = () => {
         <>
             <Header />
             <section className='principal-layer'>
-                {/** Componente de CATEGORIAS*/}
+        
 
-                <FilterSection />
+                <CategoryFilter />
                 <ProductSection>
                         <Card Name="Eco Twist" Price="200" Stock="32" Image="https://m.media-amazon.com/images/I/51LcexcMjTL.jpg" Id={1} />
                         <Card Name="Eco Twist" Price="200" Stock="32" Image="url" />

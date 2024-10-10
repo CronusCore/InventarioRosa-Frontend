@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import HomePage from './Components/Products/HomePage'
+import LookProduct from './Components/Products/LookProduct'
 import './index.css'
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
 
   return (
     <>
-      <HomePage/>
+      {//<HomePage/>
+      }
+      <LookProduct/>
     </>
   )
 }
