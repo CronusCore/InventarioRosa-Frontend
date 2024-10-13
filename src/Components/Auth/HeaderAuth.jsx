@@ -1,12 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import AdministratorLogo from '../../assets/category-minus.svg';
-import SearchBar from './SearchBar';
+import LogOut from '../../assets/logout.svg';
 import { useState, useEffect } from 'react';
 
-
- const Header = () =>{
+export default function HeaderAuth(){
     const [isScrolling , setIsScrolling] = useState(false);
 
     const handleScroll = (e) =>{
@@ -36,13 +34,11 @@ import { useState, useEffect } from 'react';
                 navbarScroll
               />
               <div className='bar-container'  >
-                <SearchBar Width={"700px"} Height={"32px"} Placeholder={"Busca tus productos favoritos"}/>
-                <a className='color-light'><img src={AdministratorLogo}/> Administrar</a>
+                <a className='color-light'><img src={LogOut}/> Cerrar sesion</a>
               </div>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       );
- }
 
- export default Header;
+}
