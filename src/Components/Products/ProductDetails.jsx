@@ -15,11 +15,17 @@ export default function ProductDetails({Id}){
                 <figure >
                     <img className="image-preview" src="https://m.media-amazon.com/images/I/51LcexcMjTL.jpg" alt="" />
                 </figure>
+                <figure >
+                    <img className="image-preview" src="https://m.media-amazon.com/images/I/51LcexcMjTL.jpg" alt="" />
+                </figure>
+                
+                
             </section>
             <section className="image-principal">
                 <figure>
                     <img className="image-view" src="https://m.media-amazon.com/images/I/51LcexcMjTL.jpg" alt="" />
                 </figure>
+                
             </section>
             <section className="product-details">
                 <h3>ECO TWIST AZUL DE ULTIMA EDICION</h3>

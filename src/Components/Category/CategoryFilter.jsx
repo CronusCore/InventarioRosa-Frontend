@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { setFirstScreenSize } from '../../Functions';
 
 const CategoryFilter = () => {
-    const [isMobileScreen, setIsMobileScreen] = useState(setFirstScreenSize(598));
     const [isShowCategory, setIsShowCategory] = useState(!setFirstScreenSize(598));
 
     const handleShowCategory = (e) => {
         setIsShowCategory(!isShowCategory);
+        // Esconder el boton
+        e.target.closest('button').classList.toggle('hidden-button');
     }
 
     useEffect(() => {
@@ -15,10 +16,8 @@ const CategoryFilter = () => {
 
         const handleResize = () => {
             const isScreenMob = setFirstScreenSize(598);
-            setIsMobileScreen(isScreenMob);
-            setIsShowCategory(!isScreenMob || isShowCategory );
 
-            
+            setIsShowCategory(!isScreenMob || isShowCategory);
         }
         window.addEventListener('resize', handleResize);
 
@@ -30,54 +29,53 @@ const CategoryFilter = () => {
     return (
         //Crear el boton cuando sea tamano movil
         <>
-            {isMobileScreen ?
 
-                <button className='mobile-category' onClick={handleShowCategory}>
-                    <img src={CategoryFilterlogo} />
-                </button>
+            <button className={`mobile-category ${isShowCategory ? '' : 'hidden-button'}`} onClick={handleShowCategory}>
+                <img src={CategoryFilterlogo} />
+            </button>
 
-                : null}
-            {isShowCategory &&
-                <section className="filter-section">
-                    <header className='category-header color-titulos'>
-                        <img src={CategoryFilterlogo} /> Categorias
-                    </header>
+            <section className={`filter-section ${isShowCategory ? '' : 'hidden-category-section'}`}>
 
-                    <section className='section-category-btns'>
-                        <button className=' btn-category'>
-                            Platos
-                        </button>
-                        <button className=' btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                        <button className='btn-category'>
-                            Platos
-                        </button>
-                    </section>
+                <header className='category-header color-titulos'>
+                    <img src={CategoryFilterlogo} /> Categorias
+                </header>
+
+                <section className='section-category-btns'>
+                    <button className=' btn-category'>
+                        Platos
+                    </button>
+                    <button className=' btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
+                    <button className='btn-category'>
+                        Platos
+                    </button>
                 </section>
-            }
+            </section>
         </>
+
+
     );
 }
 

@@ -65,6 +65,7 @@ figure{
 }
 
 section.principal-layer{
+  
   background-color: var(--BackGroundWhite);
   min-height: calc(100vh - 74px) ;
   
@@ -140,8 +141,10 @@ article.product-card{
   width: 205px;
   min-height: calc(100vh - 74px);
   padding: 24px;
+  left: 0;
   background-color: var(--letterBlackBg);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
 
 }
 .nav-fixed{
@@ -215,20 +218,23 @@ article.product-card{
 .mobile-category{
   position: fixed;
   z-index: 1000;
-  bottom: 32px;
-  right: 16px;
+  left: 181px ;
+  margin-top: 20px ;
   border: none;
- 
   background-color: var(--letterWhiteBg);
   border-radius: 50%;
   width: 48px;
   height: 48px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 
 .mobile-category:active{
+  background-color: var(--letterBlackBg);
+ 
+}
+.mobile-category:hover{
   background-color: var(--letterBlackBg);
  
 }
@@ -269,7 +275,7 @@ article.product-card{
 .image-preview{
   width: 100px;
   height: 100px;
-  border: 1px solid var(--TitleColor);
+  border: 1px solid var(--color-gray);
   border-radius: 5px;
   object-fit: cover;
   
@@ -282,8 +288,9 @@ article.product-card{
 .image-collection{
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-x: scroll;
   scrollbar-width: none;
+  
 
 }
 .image-view{
@@ -326,6 +333,15 @@ article.product-card{
   }
 }
 
+.hidden-button{
+  left: 0px;
+ 
+}
 
+.hidden-category-section{
+  left: -181px;
+  
+  overflow: hidden;
+}
 
 
