@@ -23,7 +23,7 @@ export default function ManageProduct(){
                         </select>
                         <button className="btn-filtrar">Filtrar</button>
                     </div>
-                    <div className='table-container'>
+                    <div className='table-container table-responsive'>
                         <table>
                             <thead>
                                 <tr>

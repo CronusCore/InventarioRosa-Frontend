@@ -4,10 +4,27 @@ import Navbar from 'react-bootstrap/Navbar';
 import AdministratorLogo from '../../assets/category-minus.svg';
 import SearchBar from './SearchBar';
 import { useState, useEffect } from 'react';
+import { useContext } from "react";
+import { SearchContext, LoginContext } from "../Products/HomePage";
+import { useNavigate } from 'react-router-dom';
+
 
 
  const Header = () =>{
     const [isScrolling , setIsScrolling] = useState(false);
+    const {setValueSearch} = useContext(SearchContext);
+    const {isShowLogin, setIsShowLogin} = useContext(LoginContext);
+    const navigate = useNavigate();
+    const handlerEnter = (e) =>{
+        if(e.key === 'Enter'){
+          
+            setValueSearch(e.target.value);
+            console.log(e.target.value);  
+            if(window.location.pathname !== '/'){
+              navigate('/');
+            }
+        }
+    }
 
     const handleScroll = (e) =>{
       if(window.scrollY > 1){
@@ -24,10 +41,12 @@ import { useState, useEffect } from 'react';
         }
     },[]);
 
+
+
     return (
         <Navbar expand="lg" className={`${isScrolling ? "bg-scrolling" : "bg-principal" } p-2 nav-fixed`}>
           <Container fluid>
-            <Navbar.Brand href="#" className='title'>Inventario Rosa</Navbar.Brand>
+            <Navbar.Brand href="/" className='title'>Inventario Rosa</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -36,8 +55,8 @@ import { useState, useEffect } from 'react';
                 navbarScroll
               />
               <div className='bar-container'  >
-                <SearchBar Width={"700px"} Height={"32px"} Placeholder={"Busca tus productos favoritos"}/>
-                <a className='color-light'><img src={AdministratorLogo}/> Administrar</a>
+                <SearchBar Width={"700px"} Height={"32px"} Placeholder={"Busca tus productos favoritos"} handlerEnter={handlerEnter}  />
+                <a className='color-light' onClick={()=> setIsShowLogin(!isShowLogin)}><img src={AdministratorLogo}/> Administrar</a>
               </div>
             </Navbar.Collapse>
           </Container>

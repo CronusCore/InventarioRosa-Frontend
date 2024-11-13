@@ -68,7 +68,7 @@ figure{
 
 section.principal-layer{
   
-  background-color: var(--BackGroundWhite);
+  background-color: var(--letterBlackBg);
   min-height: calc(100vh - 74px) ;
   
 }
@@ -83,7 +83,19 @@ article.product-card{
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   padding: 16px;
+  position: relative;
   
+
+}
+.sku-target{
+  position: absolute;
+  width: auto;
+  background-color: var(--PrincipalColor);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 0.75rem;
+  color: var(--letterBlackBg);
+  right: 16px;
 
 }
 
@@ -140,6 +152,7 @@ article.product-card{
   flex-direction: column;
   gap: 8px ;
   position: fixed;
+  z-index: 12;
   width: 205px;
   min-height: calc(100vh - 74px);
   padding: 24px;
@@ -154,6 +167,7 @@ article.product-card{
   top: 0;
   backdrop-filter: blur(10px);
   transition: all 1s;
+  z-index: 10;
 }
 
 .bg-scrolling{
@@ -173,7 +187,7 @@ article.product-card{
 
   .product-section{
     margin: 0;
-    
+  
   }
 
   .detail-section{
@@ -183,9 +197,7 @@ article.product-card{
     flex-wrap: wrap;
     flex-direction: column-reverse;
   }
-  .table-container{
-    overflow-x: scroll;
-  }
+ 
  
 }
 
@@ -275,7 +287,7 @@ article.product-card{
   gap: 8px;
   justify-content: space-between;
   background-color: var(--letterBlackBg);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   min-width: 450px;
   max-width: 1100px;
@@ -324,7 +336,7 @@ article.product-card{
   flex-basis: 450px;
   margin: 16px;
   padding: 16px;
-  border: 1px solid var(--TitleColor);
+  box-shadow: -5px 0px  var(--color-gray);
   border-radius: 5px;
 }
 .product-details > p {
@@ -404,17 +416,15 @@ article.product-card{
   border-radius: 5px;
 }
 .table-container{
-  display: flex;
-  gap: 32px;
   padding: 16px;
-  flex-wrap: wrap;
   margin-top: 32px;
-  justify-content: center;
+
  
 }
 table{
   width: 100%;
   max-width: 1200px;
+  margin: auto;
   
 }
 thead{
@@ -479,3 +489,81 @@ tbody tr:last-child td{
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 598px)  {
+
+  table{
+    max-width: 100px !important;
+  }
+ 
+}
+
+.login-modal{
+  position: fixed;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(125, 125, 125, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+.login-modal form{
+  width: 300px;
+  height: 400px;
+  background-color: var(--letterBlackBg);
+  border-radius: 10px;
+  padding: 16px;
+
+
+}
+.login-modal form main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65%;
+  width: 100%;
+  gap: 16px;
+
+}
+.login-modal form main div label{
+  display: block;
+  position: relative;
+  top: -25px;
+  left: 5px;
+  transition: all 0.3s;
+}
+.login-modal form main div input{
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+
+}
+.login-modal form main div input:focus + label,.login-modal form main div input:not(:placeholder-shown) + label  {
+  top: -45px;
+  transform: scale(0.8);
+  left: -25px;
+  
+}
+.btn-success{
+  background-color: var(--PrincipalColor);
+  color: var(--letterBlackBg);
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  border: none;
+  padding: 8px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+}
+
+.btn-success:hover
+{
+  background-color: var(--letterBlackBg);
+  color: var(--PrincipalColor);
+}

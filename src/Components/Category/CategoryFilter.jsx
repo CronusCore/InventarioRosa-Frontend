@@ -1,9 +1,10 @@
 import CategoryFilterlogo from '../../assets/CategorySVG.svg'
 import { useEffect, useState } from 'react';
-import { setFirstScreenSize } from '../../Functions';
+import { endpointHost, setFirstScreenSize } from '../../Functions';
 
 const CategoryFilter = () => {
     const [isShowCategory, setIsShowCategory] = useState(!setFirstScreenSize(598));
+    const [categories, setCategories] = useState([]);
 
     const handleShowCategory = (e) => {
         setIsShowCategory(!isShowCategory);
@@ -19,6 +20,19 @@ const CategoryFilter = () => {
 
             setIsShowCategory(!isScreenMob || isShowCategory);
         }
+
+        const getCategories = async () => {
+            try {
+                const data = await fetch(`${endpointHost}/category`, {
+                    method: 'GET',
+                });
+                const jsonC = await data.json();
+                setCategories(jsonC);
+            } catch {}
+
+        }
+        getCategories();
+
         window.addEventListener('resize', handleResize);
 
         return () => {
@@ -41,36 +55,15 @@ const CategoryFilter = () => {
                 </header>
 
                 <section className='section-category-btns'>
-                    <button className=' btn-category'>
-                        Platos
-                    </button>
-                    <button className=' btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
-                    <button className='btn-category'>
-                        Platos
-                    </button>
+                    {
+                        categories?.map((category) => 
+                            <button className=' btn-category' key={category.ID}>
+                                {category.category_name}
+                            </button>
+                        )
+                    }
+
+
                 </section>
             </section>
         </>
